@@ -3,12 +3,9 @@ package netty4
 
 import com.twitter.finagle.Stack
 import com.twitter.finagle.netty4.Netty4Listener
-import com.twitter.finagle.netty4.channel.AnyToHeapInboundHandler
 import com.twitter.finagle.server.Listener
 import com.twitter.finagle.transport.Transport
-import io.netty.buffer.ByteBuf
 import io.netty.channel._
-import io.netty.channel.socket.SocketChannel
 import io.netty.handler.codec.http2._
 import io.netty.handler.ssl.{ApplicationProtocolNames, ApplicationProtocolNegotiationHandler}
 

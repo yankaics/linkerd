@@ -3,7 +3,7 @@ package com.twitter.finagle.netty4.buoyant
 
 import com.twitter.finagle.buoyant.TlsClientPrep
 import com.twitter.finagle.client.Transporter
-import com.twitter.finagle.netty4.ssl.SslConnectHandler
+import com.twitter.finagle.netty4.ssl.client.SslClientConnectHandler
 import com.twitter.finagle.ssl.SessionVerifier
 import com.twitter.finagle.transport.Transport
 import com.twitter.finagle.{Address, Stack}
@@ -109,7 +109,7 @@ object Netty4ClientTls {
             case TlsClientPrep.Trust.Verified(cn, _) => SessionVerifier.hostname(cn)
             case _ => SessionVerifier.AlwaysValid
           }
-          ch.pipeline.addFirst("tlsConnect", new SslConnectHandler(handler, validator))
+          ch.pipeline.addFirst("tlsConnect", new SslClientConnectHandler(handler, validator))
 
           ch.pipeline.addFirst("tls", handler); ()
       }

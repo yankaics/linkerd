@@ -210,6 +210,6 @@ object DstBindingFactory {
     def close(deadline: Time) =
       Closable.sequence(caches: _*).close(deadline)
 
-    def status = Status.worstOf[Cache[_]](caches, _.status)
+    def status = Status.Open
   }
 }

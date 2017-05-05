@@ -6,8 +6,7 @@ import com.twitter.finagle.buoyant.TlsClientPrep.TransportSecurity
 import com.twitter.finagle.client.Transporter
 import com.twitter.finagle.netty4.Netty4Transporter
 import com.twitter.finagle.netty4.buoyant.{BufferingConnectDelay, Netty4ClientTls}
-import com.twitter.finagle.netty4.channel.AnyToHeapInboundHandler
-import io.netty.channel.{ChannelDuplexHandler, ChannelHandlerContext, ChannelPipeline}
+import io.netty.channel.ChannelPipeline
 import io.netty.handler.codec.http2._
 import io.netty.handler.ssl.ApplicationProtocolNames
 import java.net.SocketAddress
